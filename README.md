@@ -1,8 +1,4 @@
-org.dita4publishers.common.xslt
+org.dita4publishers.html2
 ======================
 
-Provides XSLT modules and function libraries appropriate
-for any Open Toolkit transform. Primarily supports the
-D4P map-driven processing framework.
-
-Depends on the org.dita-community-common.xslt plugin <https://github.com/dita-community/org.dita-community.common.xslt>
+Extension to the base HTML transform type. Does numbering across the publication, back-of-the-box index, dynamic ToC
