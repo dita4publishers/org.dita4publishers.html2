@@ -50,30 +50,25 @@
        
   <xsl:import href="../../org.dita-community.common.xslt/xsl/dita-support-lib.xsl"/>
   <xsl:import href="../../org.dita-community.common.xslt/xsl/relpath_util.xsl"/>
+  
+  Also depend on this module, which is included by the base HTML transforms:
+  
+  <xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
 -->  
-  <xsl:import href="../../org.dita4publishers.common.xslt/xsl/reportParametersBase.xsl"/>
-  <xsl:import href="../../org.dita4publishers.common.html/xsl/html-generation-utils.xsl"/>
-  <xsl:import href="../../org.dita4publishers.common.mapdriven/xsl/dataCollection.xsl"/>
+  <xsl:import href="plugin:org.dita4publishers.common.xslt:xsl/reportParametersBase.xsl"/>
+  <xsl:import href="plugin:org.dita4publishers.common.html:xsl/html-generation-utils.xsl"/>
+  <xsl:import href="plugin:org.dita4publishers.common.mapdriven:xsl/dataCollection.xsl"/>
   <!-- Import the base HTML output generation transform. -->
   <xsl:import href="plugin:org.dita.xhtml:xsl/dita2xhtml.xsl"/>
   
   
-  <xsl:import href="../../org.dita4publishers.common.xslt/xsl/map2graphicMap.xsl"/>
-  <xsl:import href="../../org.dita4publishers.common.xslt/xsl/topicHrefFixup.xsl"/>
+  <xsl:import href="plugin:org.dita4publishers.common.xslt:xsl/map2graphicMap.xsl"/>
+  <xsl:import href="plugin:org.dita4publishers.common.xslt:xsl/graphicMap2AntCopyScript.xsl"/>
+  <xsl:import href="plugin:org.dita4publishers.common.xslt:xsl/topicHrefFixup.xsl"/>
   
-  <!-- FIXME: This URL syntax is local to me: I hacked catalog-dita_template.xml
-              to add this entry:
-              
-              <rewriteURI uriStartString="plugin:base-xsl:" rewritePrefix="xsl/"></rewriteURI>
-       
-        see https://github.com/dita-ot/dita-ot/issues/1405       
-    -->
-  <xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
-  
-  <xsl:include href="../../org.dita4publishers.common.html/xsl/commonHtmlOverrides.xsl"/>
-  <xsl:include href="../../org.dita4publishers.common.html/xsl/commonHtmlEnumeration.xsl"/>
-  <xsl:include href="../../org.dita4publishers.common.html/xsl/commonHtmlBookmapEnumeration.xsl"/>
-
+  <xsl:include href="plugin:org.dita4publishers.common.html:xsl/commonHtmlOverrides.xsl"/>
+  <xsl:include href="plugin:org.dita4publishers.common.html:xsl/commonHtmlEnumeration.xsl"/>
+  <xsl:include href="plugin:org.dita4publishers.common.html:xsl/commonHtmlBookmapEnumeration.xsl"/>
   
   <xsl:include href="map2html2Content.xsl"/>
   <xsl:include href="map2html2RootPages.xsl"/>
@@ -336,9 +331,11 @@
       <xsl:with-param name="collected-data" as="element()" select="$collected-data" tunnel="yes"/>
     </xsl:apply-templates>
 -->    
+    <xsl:message> + [DEBUG] generate-graphic-copy-ant-script:  Applying templates to <xsl:value-of select="name(.)"/>...</xsl:message>
     <xsl:apply-templates select="." mode="generate-graphic-copy-ant-script">
-      <xsl:with-param name="graphicMap" as="element()" tunnel="yes" select="$graphicMap"/>
+      <xsl:with-param name="graphicMap" as="node()*" tunnel="yes" select="$graphicMap"/>
     </xsl:apply-templates>
+    <xsl:message> + [DEBUG] generate-graphic-copy-ant-script: Templates applied.</xsl:message>
   </xsl:template>
    
 </xsl:stylesheet>

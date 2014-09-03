@@ -166,7 +166,13 @@
     </xslt>
   	
   	<condition property="skip.copy.graphics" value="${local.skip.copy.graphics}">
-  		<isset property="local.skip.copy.graphics"/>
+  	  <or>
+  		  <isset property="local.skip.copy.graphics"/>
+  	    <not>
+  	      <available file="${output.dir}/copy-graphics.xml"/>
+  	    </not>
+  	  </or>
+  	  
   	</condition>
   			
   	<antcall target="html2.copy.graphics">
