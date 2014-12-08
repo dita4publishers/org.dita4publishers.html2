@@ -163,6 +163,8 @@
       <param name="DBG" expression="${args.debug}" if="args.debug"></param>
       <dita:extension id="d4p.html2.xslt.param" behavior="org.dita.dost.platform.InsertAction"/>
       <dita:extension id="dita.conductor.xhtml.param" behavior="org.dita.dost.platform.InsertAction"/>
+      <dita:extension id="d4p.common.html.param" behavior="org.dita.dost.platform.InsertAction"/>
+
       <xmlcatalog refid="dita.catalog"></xmlcatalog>
       
       <mapper type="glob"
