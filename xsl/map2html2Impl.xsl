@@ -86,7 +86,12 @@
 
        -->
   <xsl:param name="outdir" select="./html2"/>
-  <xsl:param name="inputdir" select="relpath:getParent(document-uri(.))"/>
+  <!-- 
+       NOTE: As of OT 2.0, there is no Ant parameter that provides the input directory,
+             so we use the @xtrf attribute to get the directory containing the input
+             map.
+    -->
+  <xsl:param name="inputdir" select="relpath:getParent(relpath:getParent(/*/@xtrf))" as="xs:string"/>
   <!-- NOTE: Case of OUTEXT parameter matches case used in base HTML
        transformation type.
     -->
@@ -190,7 +195,6 @@
       
       + CSS             = "<xsl:sequence select="$CSS"/>"
       + CSSPATH         = "<xsl:sequence select="$CSSPATH"/>"
-      + DITAEXT         = "<xsl:sequence select="$DITAEXT"/>"
       + FILEDIR         = "<xsl:sequence select="$FILEDIR"/>"
       + KEYREF-FILE     = "<xsl:sequence select="$KEYREF-FILE"/>"
       + OUTPUTDIR       = "<xsl:sequence select="$OUTPUTDIR"/>"
