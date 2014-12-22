@@ -114,14 +114,13 @@
   	<property name="args.xhtml.toc" value="index"/>
     <makeurl file="${dita.input.valfile}" property="dita.input.valfile.url" validate="no"></makeurl>    
   	
-    <xslt processor="trax"
+    <xslt
       basedir="${dita.temp.dir}"
       destdir="${output.dir}"
       includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"
       classpathref="dost.class.path"
       style="${map2html2.style}"
-      filenameparameter="inputFileNameParam"
-    	
+      filenameparameter="inputFileNameParam"    	
     	>
      	<param name="cssOutputDir" expression="${css.output.dir}"/>
       <param name="debug" expression="${debug}"/>
