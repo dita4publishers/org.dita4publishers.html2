@@ -22,4 +22,24 @@
   <feature extension="dita.conductor.transtype.check" value="html2" type="txt"/>
   <feature extension="dita.conductor.target.relative" value="build.xml" type="file"/>
 
+  <!-- New way of specifying metadata with parameters contributed by the transtype:
+        https://github.com/dita-ot/dita-ot/issues/1757
+   -->
+  <transtype name="html2" extends="d4pCommons" desc="HTML2 (DITA 4 Publishers)">
+    <param name="html2.generate.dynamic.toc"
+      desc="Specifies whether or not to generate a dynamic TOC in the output." type="enum">
+      <val>true</val>
+      <val>false</val>
+    </param>
+    <param name="html2.generate.frameset"
+      desc="Specifies whether or not to generate an HTML frameset file for the map." type="enum">
+      <val>true</val>
+      <val default="true">false</val>
+    </param>
+    <param name="html2.generate.static.toc"
+      desc="Specifies whether or not to generate a static TOC in the output" type="enum">
+      <val>true</val>
+      <val default="true">false</val>
+    </param>
+  </transtype>
 </plugin>
