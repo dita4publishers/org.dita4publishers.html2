@@ -16,7 +16,7 @@
     
        DITA Map to HTML Transformation
        
-       Copyright (c) 2010, 2012 DITA For Publishers
+       Copyright (c) 2010, 2015 DITA For Publishers
        
        Licensed under Common Public License v1.0 or the Apache Software Foundation License v2.0.
        The intent of this license is for this material to be licensed in a way that is
