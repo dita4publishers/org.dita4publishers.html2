@@ -116,7 +116,7 @@
   <xsl:template mode="generate-dynamic-toc" match="*[df:class(., 'topic/title')]"/>
   
   <!-- Convert each topicref to a ToC entry. -->
-  <xsl:template match="*[df:isTopicRef(.)]" mode="generate-dynamic-toc">
+  <xsl:template match="*[df:isTopicRef(.)][not(@toc = 'no')]" mode="generate-dynamic-toc">
     <xsl:param name="tocDepth" as="xs:integer" tunnel="yes" select="0"/>
     <xsl:param name="parentId" as="xs:string"  tunnel="yes"/>
     <xsl:param name="rootMapDocUrl" as="xs:string" tunnel="yes"/>
@@ -219,9 +219,7 @@
            index-terms:index-term" 
     mode="generate-dynamic-toc">
     <xsl:param name="parentId" as="xs:string" tunnel="yes"/>
-    <xsl:call-template name="construct-tree-item-for-group-or-term">
-       <xsl:with-param name="parentId" select="$parentId" as="xs:string"/>
-    </xsl:call-template>
+    <xsl:call-template name="construct-tree-item-for-group-or-term"/>
     <xsl:apply-templates select="index-terms:* except index-terms:label " mode="#current">
       <xsl:with-param name="parentId" as="xs:string" tunnel="yes" select="generate-id(.)"/>      
     </xsl:apply-templates>
@@ -231,9 +229,7 @@
     match="index-terms:see-also" 
     mode="generate-dynamic-toc">
     <xsl:param name="parentId" as="xs:string" tunnel="yes"/>
-    <xsl:call-template name="construct-tree-item-for-group-or-term">
-      <xsl:with-param name="parentId" select="$parentId" as="xs:string"/>
-    </xsl:call-template>
+    <xsl:call-template name="construct-tree-item-for-group-or-term"/>
   </xsl:template>  
   
   <xsl:template match="index-terms:see-also/index-terms:label" mode="generate-index-term-link-text-dynamic-toc">
@@ -245,9 +241,7 @@
     match="index-terms:see" 
     mode="generate-dynamic-toc">
     <xsl:param name="parentId" as="xs:string" tunnel="yes"/>
-    <xsl:call-template name="construct-tree-item-for-group-or-term">
-      <xsl:with-param name="parentId" select="$parentId" as="xs:string"/>
-    </xsl:call-template>
+    <xsl:call-template name="construct-tree-item-for-group-or-term"/>
   </xsl:template>  
   
   <xsl:template match="index-terms:see/index-terms:label" mode="generate-index-term-link-text-dynamic-toc">
