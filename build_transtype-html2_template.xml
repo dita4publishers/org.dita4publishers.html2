@@ -5,9 +5,6 @@
   <!-- test to see where the plugin is located, plugins or demo -->
   <dirname property="html2.dir" file="${ant.file.dita2html2}"/>
 	
-	<!-- Controls debugging within the XSLTs. Set to "true" to turn on debugging: -->
-	<property name="debug" value="false"/>
-	
 	<target name="dita2html2"
     unless="noMap"
     xmlns:dita="http://dita-ot.sourceforge.net"
@@ -123,7 +120,7 @@
       filenameparameter="inputFileNameParam"    	
     	>
      	<param name="cssOutputDir" expression="${css.output.dir}"/>
-      <param name="debug" expression="${debug}"/>
+      <param name="debug" expression="${debug}" if="debug"/>
     	<param name="fileOrganizationStrategy" expression="${html2.file.organization.strategy}" if="html2.file.organization.strategy"/>
       <param name="generateDynamicToc" expression="${html2.generate.dynamic.toc}" if="html2.generate.dynamic.toc"/>
       <param name="generateFrameset" expression="${html2.generate.frameset}" if="html2.generate.frameset"/>
