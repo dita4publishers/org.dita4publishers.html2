@@ -105,7 +105,7 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:variable name="topicResultUri" 
-          select="htmlutil:getTopicResultUrl($outdir, root($topic), $rootMapDocUrl)"
+          select="htmlutil:getTopicResultUrl2($outdir, root($topic), ., $rootMapDocUrl)"
           as="xs:string"
         />
         <xsl:variable name="tempTopic" as="document-node()">
