@@ -63,7 +63,10 @@
           <xsl:variable name="fragId" as="xs:string" 
             select="relpath:getFragmentId(string(@href))"
           />
-          <xsl:variable name="targetUri" select="htmlutil:getTopicResultUrl($outdir, root($topic), $rootMapDocUrl)" as="xs:string"/>
+          <xsl:variable name="targetUri" 
+            select="htmlutil:getTopicResultUrl2($outdir, root($topic), ., $rootMapDocUrl)" 
+            as="xs:string"
+          />
           <xsl:variable name="relativeUri" 
             select="concat(
             relpath:getRelativePath($outdir, $targetUri), 

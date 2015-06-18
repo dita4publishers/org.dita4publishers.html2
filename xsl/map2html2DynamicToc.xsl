@@ -131,7 +131,8 @@
           <xsl:message> + [WARNING] generate-dynamic-toc: Failed to resolve topic reference to href "<xsl:sequence select="string(@href)"/>"</xsl:message>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:variable name="targetUri" select="htmlutil:getTopicResultUrl($outdir, root($topic), $rootMapDocUrl)" as="xs:string"/>
+          <xsl:variable name="targetUri" 
+            select="htmlutil:getTopicResultUrl2($outdir, root($topic), ., $rootMapDocUrl)" as="xs:string"/>
           <xsl:variable name="relativeUri" select="relpath:getRelativePath($outdir, $targetUri)" as="xs:string"/>
           <xsl:variable name="enumeration" as="xs:string?">
             <xsl:apply-templates select="." mode="enumeration"/>
@@ -274,9 +275,15 @@
     </xsl:if>
     <xsl:variable name="topic" select="document(relpath:getResourcePartOfUri(@source-uri))" as="document-node()"/>
     
-    <xsl:variable name="targetUri" select="htmlutil:getTopicResultUrl($outdir, $topic, $rootMapDocUrl)" as="xs:string"/>
+    <!-- FIXME: Need the topicref so we can take @copy-to into account. -->
+    <xsl:variable name="targetUri" 
+      select="htmlutil:getTopicResultUrl($outdir, $topic, $rootMapDocUrl)" 
+      as="xs:string"
+    />
     
-    <xsl:variable name="relativeUri" select="relpath:getRelativePath($outdir, $targetUri)" as="xs:string"/>
+    <xsl:variable name="relativeUri" 
+      select="relpath:getRelativePath($outdir, $targetUri)" as="xs:string"
+    />
     
     <xsl:variable name="self" select="generate-id(.)" as="xs:string"/>
     
