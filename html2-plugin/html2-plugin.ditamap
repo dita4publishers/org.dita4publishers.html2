@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pubmap PUBLIC "urn:pubid:dita4publishers.org:doctypes:dita:dtd:pubmap" "urn:pubid:dita4publishers.org:doctypes:dita:dtd:pubmap">
+<pubmap>
+ <mapref href="keys.ditamap"/> 
+ <chapter keyref="html2-plugin-intro">
+  <subsection keyref="html2-plugin-transform">
+   <subsection keyref="html2-plugin-process-flow"/>
+   <subsection keyref="html2-plugin-enumeration">
+    <topicref keyref="html2-plugin-collected-data"/>
+   </subsection>
+  </subsection>
+  <subsection keyref="html2-plugin-parameters">
+   <subsection keyref="html2-plugin-fileOrganizationStrategy"/>
+   <subsection keyref="html2-plugin-generateDynamicToc"/>
+   <subsection keyref="html2-plugin-frameset"/>
+   <subsection keyref="html2-plugin-staticToc"/>
+  </subsection>
+ </chapter>
+</pubmap>

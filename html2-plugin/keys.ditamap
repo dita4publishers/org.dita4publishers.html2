@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <keydef keys="html2-plugin-intro" href="html2-toolkit-plugin.xml"/>
+  <keydef keys="html2-plugin-transform" href="understanding-html2-transforms.xml"/>
+  <keydef keys="html2-plugin-process-flow" href="overall-process-flow.xml"/>
+  <keydef keys="html2-plugin-enumeration" href="customizing-enumeration.xml"/>
+  <keydef keys="html2-plugin-collected-data" href="using-collected-data.dita"/>
+  <keydef keys="html2-plugin-parameters" href="html2-transtype-parameters-ref.xml"/>
+  <keydef keys="html2-plugin-fileOrganizationStrategy" href="reference/ant-parm-fileOrganizationStrategy.xml"/>
+  <keydef keys="html2-plugin-generateDynamicToc" href="reference/ant-parm-generateDynamicToc.xml"/>
+  <keydef keys="html2-plugin-frameset" href="reference/ant-parm-generateFrameset.xml"/>
+  <keydef keys="html2-plugin-staticToc" href="reference/ant-parm-generateStaticToc.xml"/>
+</map>
