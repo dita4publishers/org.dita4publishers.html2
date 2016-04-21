@@ -36,10 +36,23 @@
       <val>true</val>
       <val default="true">false</val>
     </param>
+    <param name="html2.generate.index"
+      desc="Specifies whether or not to generate a back-of-the-book index" type="enum">
+      <val>true</val>
+      <val default="true">false</val>
+    </param>
     <param name="html2.generate.static.toc"
       desc="Specifies whether or not to generate a static TOC in the output" type="enum">
       <val>true</val>
       <val default="true">false</val>
+    </param>
+    <param name="html2.file.organization.strategy"
+      desc="Specifies the strategy to use for organizing the result HTML files: 'as-authored',
+      'single-dir', or customization-supported values."
+      type="enum"
+      >
+      <val default="true">as-authored</val>
+      <val>single-dir</val>
     </param>
   </transtype>
 </plugin>
