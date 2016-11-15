@@ -11,7 +11,7 @@
 		dita:depends="
 		d4p.map-driven-build-init, 
 		build-init, 
-		dc-preprocess,
+		preprocess,
 		html2"
     dita:extension="depends org.dita.dost.platform.InsertDependsAction">
   </target>
