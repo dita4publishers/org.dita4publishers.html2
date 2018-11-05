@@ -115,7 +115,7 @@
             <xsl:value-of select="/*[contains(@class,' map/map ')]/@title"/>
           </xsl:when>
         </xsl:choose>
-      </title><xsl:value-of select="$newline"/>
+      </title><xsl:value-of select="'&#x0a;'"/>
     </xsl:if>
   </xsl:template>
   
