@@ -7,7 +7,7 @@
   xmlns:index-terms="http://dita4publishers.org/index-terms"
   xmlns:local="urn:functions:local"
   exclude-result-prefixes="local xs df xsl relpath htmlutil index-terms"
-  version="2.0">
+  version="3.0">
   <!-- =============================================================
     
     DITA Map to HTML Transformation

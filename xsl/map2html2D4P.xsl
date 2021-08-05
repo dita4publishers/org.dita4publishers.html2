@@ -5,7 +5,7 @@
   xmlns:df="http://dita2indesign.org/dita/functions"
   xmlns:relpath="http://dita2indesign/functions/relpath"
   exclude-result-prefixes="xs df relpath"
-  version="2.0">
+  version="3.0">
   <!-- =============================================================
     
     DITA Map to HTML Transformation

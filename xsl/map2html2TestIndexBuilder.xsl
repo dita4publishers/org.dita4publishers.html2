@@ -7,7 +7,7 @@
   xmlns:index-terms="http://dita4publishers.org/index-terms"
   xmlns:relpath="http://dita2indesign/functions/relpath"
   exclude-result-prefixes="xs xd df relpath"
-  version="2.0">
+  version="3.0">
   
   <!-- =============================================================
     

@@ -8,7 +8,7 @@
   xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
   
   exclude-result-prefixes="df xs relpath htmlutil xd"
-  version="2.0">
+  version="3.0">
   <!-- =============================================================
     
     DITA Map to HTML Transformation
